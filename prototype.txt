@@ -1,0 +1,18 @@
+Features----> 
+
+1. when it is dark the light turn on 
+2. when someone is near then the light will turn on 
+3.you can adjust color with a potentiometre 
+4. you can adjust the brightness using another potentiometre
+
+
+
+components I need ----->
+
+1.LDR sensor
+2.USD sensor 
+3.potentiometre x 2 
+4.RGB Light x 1 
+5.battery
+6.arduino board 
+7.jumper wires 
