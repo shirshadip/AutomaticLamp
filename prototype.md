@@ -12,7 +12,7 @@
 1. LDR sensor <br>
 2. USD sensor <br>
 3. potentiometre x 2 <br>
-4. RGB Light x 1 <br>
+4. RGB Light x 1 or more<br>
 5. battery<br>
 6. arduino board <br>
 7. jumper wires <br>
