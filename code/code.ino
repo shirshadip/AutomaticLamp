@@ -16,7 +16,7 @@ void loop() {
   int ldr = analogRead(ldrPin);
   delay(300);
 
-  if (ldr < 900) {   // DARK
+  if (ldr < 900) {  
   digitalWrite(redPin, HIGH);
   digitalWrite(greenPin, HIGH);
   digitalWrite(bluePin, HIGH);
