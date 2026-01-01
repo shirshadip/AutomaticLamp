@@ -1,13 +1,14 @@
 int ldrPin = A0;
+int pirPin = A1;   // PIR analog output
+
 int redPin = 6;
 int greenPin = 5;
 int bluePin = 3;
 
-int obstaclePin = 7;
 int buzzerPin = 8;
 
-bool buzzerOnDone = false;
-bool buzzerOffDone = false;
+bool lampState = false;
+bool lastLampState = false;
 
 void setup() {
   Serial.begin(9600);
@@ -16,49 +17,52 @@ void setup() {
   pinMode(greenPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
 
-  pinMode(obstaclePin, INPUT);
   pinMode(buzzerPin, OUTPUT);
 }
 
 void loop() {
-  int ldr = analogRead(ldrPin);   
-  int obstacle = digitalRead(obstaclePin);
+  int ldrValue = analogRead(ldrPin);  // 0–1023
+  int pirValue = analogRead(pirPin);  // 0–1023
 
-  bool lampOn = (ldr < 500 && obstacle == LOW);
+  // ---- Serial Debug ----
+  Serial.print("LDR: ");
+  Serial.print(ldrValue);
+  Serial.print(" | PIR: ");
+  Serial.println(pirValue);
 
-  // ===== LAMP ON =====
-  if (lampOn) {
+  // DARK + MOTION (PIR threshold)
+  if (ldrValue < 500 && pirValue > 200) {
+    lampState = true;
+  } 
+  else {
+    lampState = false;
+  }
 
-    // COMMON ANODE → LOW = ON (kept same)
+  // ===== LIGHT ON =====
+  if (lampState) {
+    // COMMON ANODE → FULL ON
     analogWrite(redPin, 255);
     analogWrite(greenPin, 255);
     analogWrite(bluePin, 255);
 
-    // 🔔 Beep ON (once)
-    if (!buzzerOnDone) {
-      tone(buzzerPin, 2000);
-      delay(1000);
-      noTone(buzzerPin);
-      buzzerOnDone = true;
-      buzzerOffDone = false;
-    }
+    Serial.println("🚫 Light OFF (Bright / No Motion)");
   }
-
-  // ===== LAMP OFF =====
+  // ===== LIGHT OFF =====
   else {
-
     analogWrite(redPin, 0);
     analogWrite(greenPin, 0);
     analogWrite(bluePin, 0);
 
-    // 🔔 Beep OFF (once)
-    if (!buzzerOffDone) {
-      tone(buzzerPin, 2000);
-      delay(1000);
-      noTone(buzzerPin);
-      buzzerOffDone = true;
-      buzzerOnDone = false;
-    }
+    
+    Serial.println("💡 Light ON (Dark + Motion)");
+  }
+
+  // ===== BUZZER (state change only) =====
+  if (lampState != lastLampState) {
+    tone(buzzerPin, 2000);
+    delay(300);
+    noTone(buzzerPin);
+    lastLampState = lampState;
   }
 
   delay(300);
