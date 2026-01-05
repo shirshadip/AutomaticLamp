@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="-9SnTVsFOnYjkxmvxKm2" name="Page-1">
-        <mxGraphModel dx="978" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1760" dy="1126" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -128,8 +128,11 @@
                 <mxCell id="40" value="GREEN&lt;div&gt;D3&lt;/div&gt;" style="whiteSpace=wrap;html=1;fillColor=#cdeb8b;strokeColor=#36393d;" parent="1" vertex="1">
                     <mxGeometry x="520" y="265" width="70" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="41" value="RGB LIGHT COLORS to generate WHITE COLOR&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;red -------HIGH(255)&lt;/div&gt;&lt;div&gt;blue ------&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;HIGH(255)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;green-----&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;HIGH(255)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="100" y="475" width="460" height="150" as="geometry"/>
+                <mxCell id="41" value="RGB LIGHT COLORS to generate WHITE COLOR&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;red -------HIGH(255)&lt;/div&gt;&lt;div&gt;blue ------&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;HIGH(255)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;green-----&lt;/span&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;HIGH(255)&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffcccc;strokeColor=#36393d;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="620" width="460" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="A1" style="whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="340" width="50" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
